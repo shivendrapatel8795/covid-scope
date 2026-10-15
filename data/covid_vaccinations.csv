@@ -1,0 +1,25 @@
+date,country,people_vaccinated_pct
+2021-01-01,India,0.2
+2021-02-01,India,0.9
+2021-03-01,India,4.5
+2021-04-01,India,8.0
+2021-05-01,India,12.5
+2021-06-01,India,20.0
+2021-01-01,United States,1.8
+2021-02-01,United States,10.4
+2021-03-01,United States,28.8
+2021-04-01,United States,43.0
+2021-05-01,United States,50.1
+2021-06-01,United States,55.4
+2021-01-01,Brazil,0.1
+2021-02-01,Brazil,1.6
+2021-03-01,Brazil,6.0
+2021-04-01,Brazil,12.4
+2021-05-01,Brazil,21.7
+2021-06-01,Brazil,30.5
+2021-01-01,United Kingdom,1.4
+2021-02-01,United Kingdom,17.8
+2021-03-01,United Kingdom,42.2
+2021-04-01,United Kingdom,51.1
+2021-05-01,United Kingdom,57.5
+2021-06-01,United Kingdom,62.0

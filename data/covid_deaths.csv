@@ -1,0 +1,25 @@
+date,country,deaths
+2021-01-01,India,250
+2021-02-01,India,100
+2021-03-01,India,350
+2021-04-01,India,3400
+2021-05-01,India,3700
+2021-06-01,India,900
+2021-01-01,United States,3300
+2021-02-01,United States,1900
+2021-03-01,United States,1100
+2021-04-01,United States,700
+2021-05-01,United States,500
+2021-06-01,United States,350
+2021-01-01,Brazil,1100
+2021-02-01,Brazil,1150
+2021-03-01,Brazil,2200
+2021-04-01,Brazil,3000
+2021-05-01,Brazil,2100
+2021-06-01,Brazil,1700
+2021-01-01,United Kingdom,900
+2021-02-01,United Kingdom,500
+2021-03-01,United Kingdom,150
+2021-04-01,United Kingdom,30
+2021-05-01,United Kingdom,15
+2021-06-01,United Kingdom,20

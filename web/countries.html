@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countries — CovidScope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .country-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .country-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .country-card-header {
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, rgba(15,118,110,0.08), rgba(20,184,166,0.12));
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .flag {
+      font-size: 2rem;
+    }
+    .country-card-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .country-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .metric {
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+    }
+    .metric .m-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-muted);
+    }
+    .metric .m-value {
+      font-size: 1.25rem;
+      font-weight: 750;
+      color: var(--text);
+      margin-top: 0.15rem;
+    }
+    .metric.highlight .m-value { color: var(--primary); }
+    .metric.danger .m-value { color: var(--danger); }
+    .metric.success .m-value { color: var(--success); }
+    .note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 720px) {
+      .country-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🩺</span>
+        CovidScope
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="countries.html" class="active">Countries</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analytics.html" class="btn btn-primary">Analytics</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 2rem;">
+    <div class="section-header">
+      <h2>🌍 Country Explorer</h2>
+      <p>Key statistics for each country in the sample dataset (Jan–Jun 2021)</p>
+    </div>
+
+    <div class="country-grid">
+      <!-- India -->
+      <div class="country-card">
+        <div class="country-card-header">
+          <span class="flag">🇮🇳</span>
+          <h3>India</h3>
+        </div>
+        <div class="country-card-body">
+          <div class="metric-row">
+            <div class="metric highlight">
+              <div class="m-label">Total Cases</div>
+              <div class="m-value">907,000</div>
+            </div>
+            <div class="metric danger">
+              <div class="m-label">Total Deaths</div>
+              <div class="m-value">8,700</div>
+            </div>
+            <div class="metric success">
+              <div class="m-label">Vaccinated (Jun)</div>
+              <div class="m-value">20%</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Peak Cases</div>
+              <div class="m-value">392K</div>
+            </div>
+          </div>
+          <p class="note">Highest total cases · Peak in May 2021 during the Delta wave period</p>
+        </div>
+      </div>
+
+      <!-- United States -->
+      <div class="country-card">
+        <div class="country-card-header">
+          <span class="flag">🇺🇸</span>
+          <h3>United States</h3>
+        </div>
+        <div class="country-card-body">
+          <div class="metric-row">
+            <div class="metric highlight">
+              <div class="m-label">Total Cases</div>
+              <div class="m-value">450,000</div>
+            </div>
+            <div class="metric danger">
+              <div class="m-label">Total Deaths</div>
+              <div class="m-value">7,850</div>
+            </div>
+            <div class="metric success">
+              <div class="m-label">Vaccinated (Jun)</div>
+              <div class="m-value">55.4%</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Peak Cases</div>
+              <div class="m-value">205K</div>
+            </div>
+          </div>
+          <p class="note">Strong early vaccination rollout · Peak cases in January 2021</p>
+        </div>
+      </div>
+
+      <!-- Brazil -->
+      <div class="country-card">
+        <div class="country-card-header">
+          <span class="flag">🇧🇷</span>
+          <h3>Brazil</h3>
+        </div>
+        <div class="country-card-body">
+          <div class="metric-row">
+            <div class="metric highlight">
+              <div class="m-label">Total Cases</div>
+              <div class="m-value">370,000</div>
+            </div>
+            <div class="metric danger">
+              <div class="m-label">Total Deaths</div>
+              <div class="m-value">11,250</div>
+            </div>
+            <div class="metric success">
+              <div class="m-label">Vaccinated (Jun)</div>
+              <div class="m-value">30.5%</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Peak Cases</div>
+              <div class="m-value">78K</div>
+            </div>
+          </div>
+          <p class="note">Highest total deaths in the sample · Peak in March 2021</p>
+        </div>
+      </div>
+
+      <!-- United Kingdom -->
+      <div class="country-card">
+        <div class="country-card-header">
+          <span class="flag">🇬🇧</span>
+          <h3>United Kingdom</h3>
+        </div>
+        <div class="country-card-body">
+          <div class="metric-row">
+            <div class="metric highlight">
+              <div class="m-label">Total Cases</div>
+              <div class="m-value">84,500</div>
+            </div>
+            <div class="metric danger">
+              <div class="m-label">Total Deaths</div>
+              <div class="m-value">1,615</div>
+            </div>
+            <div class="metric success">
+              <div class="m-label">Vaccinated (Jun)</div>
+              <div class="m-value">62%</div>
+            </div>
+            <div class="metric">
+              <div class="m-label">Peak Cases</div>
+              <div class="m-value">53K</div>
+            </div>
+          </div>
+          <p class="note">Highest vaccination coverage · Lowest case-fatality rate in sample</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>CovidScope</strong> — Country-level insights from the sample dataset</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

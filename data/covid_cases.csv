@@ -1,0 +1,25 @@
+date,country,cases
+2021-01-01,India,18000
+2021-02-01,India,12000
+2021-03-01,India,53000
+2021-04-01,India,386000
+2021-05-01,India,392000
+2021-06-01,India,46000
+2021-01-01,United States,205000
+2021-02-01,United States,85000
+2021-03-01,United States,68000
+2021-04-01,United States,52000
+2021-05-01,United States,26000
+2021-06-01,United States,14000
+2021-01-01,Brazil,58000
+2021-02-01,Brazil,52000
+2021-03-01,Brazil,78000
+2021-04-01,Brazil,72000
+2021-05-01,Brazil,64000
+2021-06-01,Brazil,46000
+2021-01-01,United Kingdom,53000
+2021-02-01,United Kingdom,11000
+2021-03-01,United Kingdom,5000
+2021-04-01,United Kingdom,2500
+2021-05-01,United Kingdom,3500
+2021-06-01,United Kingdom,9500

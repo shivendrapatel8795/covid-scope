@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CovidScope — Understand the Data. Protect Your Health.</title>
+  <meta name="description" content="CovidScope turns COVID-19 data into clear visual insights — cases, deaths, vaccinations and trends across countries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+    }
+    .chart-wrap canvas {
+      width: 100% !important;
+      max-height: 320px;
+    }
+  </style>
+</head>
+<body data-page="home">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🩺</span>
+        CovidScope
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analytics.html" class="btn btn-primary">Explore Analytics</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Understand COVID.<br /><span>Make Informed Health Decisions.</span></h1>
+      <p>
+        Explore COVID-19 trends, vaccination progress and country comparisons
+        through interactive, animated visualisations powered by Python &amp; Chart.js.
+      </p>
+      <div class="hero-actions">
+        <a href="analytics.html" class="btn btn-primary">📊 Explore Analytics</a>
+        <a href="countries.html" class="btn btn-outline">🌍 Country Explorer</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="hero-emoji">📈</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Global Snapshot (Sample Data)</h2>
+      <p>Jan – Jun 2021 · India · United States · Brazil · United Kingdom</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card cases">
+        <div class="label">Total Cases</div>
+        <div class="value">1.81M</div>
+        <div class="sub">Across 4 countries</div>
+      </div>
+      <div class="stat-card deaths">
+        <div class="label">Total Deaths</div>
+        <div class="value">29.4K</div>
+        <div class="sub">Reported in period</div>
+      </div>
+      <div class="stat-card vaccinated">
+        <div class="label">Highest Vax %</div>
+        <div class="value">62%</div>
+        <div class="sub">United Kingdom</div>
+      </div>
+      <div class="stat-card countries">
+        <div class="label">Countries</div>
+        <div class="value">4</div>
+        <div class="sub">In sample dataset</div>
+      </div>
+    </div>
+
+    <!-- Interactive charts -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Cases Over Time</h3>
+          <span class="chart-badge">Interactive</span>
+        </div>
+        <div class="chart-body">
+          <div class="chart-wrap"><canvas id="chartCasesTrend"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Vaccination Progress</h3>
+          <span class="chart-badge">Interactive</span>
+        </div>
+        <div class="chart-body">
+          <div class="chart-wrap"><canvas id="chartVaccination"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Deaths by Country</h3>
+          <span class="chart-badge">Interactive</span>
+        </div>
+        <div class="chart-body">
+          <div class="chart-wrap"><canvas id="chartDeathsBar"></canvas></div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Latest Cases Comparison</h3>
+          <span class="chart-badge">Interactive</span>
+        </div>
+        <div class="chart-body">
+          <div class="chart-wrap"><canvas id="chartLatestCases"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <h3>🏆 Country Ranking (Total Cases)</h3>
+        <ul class="rank-list">
+          <li>
+            <span><span class="rank-num">1</span> India</span>
+            <span class="rank-value">907,000</span>
+          </li>
+          <li>
+            <span><span class="rank-num">2</span> United States</span>
+            <span class="rank-value">450,000</span>
+          </li>
+          <li>
+            <span><span class="rank-num">3</span> Brazil</span>
+            <span class="rank-value">370,000</span>
+          </li>
+          <li>
+            <span><span class="rank-num">4</span> United Kingdom</span>
+            <span class="rank-value">84,500</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="insight-card">
+        <h3>📈 Peak Case Months</h3>
+        <div class="peak-item">
+          <strong>India</strong> — May 2021
+          <div class="meta">Peak: 392,000 cases</div>
+        </div>
+        <div class="peak-item">
+          <strong>United States</strong> — Jan 2021
+          <div class="meta">Peak: 205,000 cases</div>
+        </div>
+        <div class="peak-item">
+          <strong>Brazil</strong> — Mar 2021
+          <div class="meta">Peak: 78,000 cases</div>
+        </div>
+        <div class="peak-item">
+          <strong>United Kingdom</strong> — Jan 2021
+          <div class="meta">Peak: 53,000 cases</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-strip">
+      <div>
+        <h3>Ready for deeper insights?</h3>
+        <p>
+          View all interactive charts — new-cases trend, CFR, scatter plots,
+          rankings and more on the full Analytics page.
+        </p>
+      </div>
+      <a href="analytics.html" class="btn btn-secondary">Open Full Analytics →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      <strong>CovidScope</strong> — COVID-19 Data Visualization &amp; Analysis<br />
+      Built with Python · Pandas · Matplotlib · Seaborn · Chart.js
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>

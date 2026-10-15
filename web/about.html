@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — CovidScope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .about-content {
+      max-width: 720px;
+    }
+    .about-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+    }
+    .about-content p, .about-content li {
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+    .about-content ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.85rem;
+      margin: 1.25rem 0 2rem;
+    }
+    .tech-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🩺</span>
+        CovidScope
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analytics.html">Analytics</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analytics.html" class="btn btn-primary">Analytics</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 2rem;">
+    <div class="section-header">
+      <h2>About CovidScope</h2>
+      <p>COVID-19 Data Visualization &amp; Analysis</p>
+    </div>
+
+    <div class="about-content">
+      <p>
+        <strong>CovidScope</strong> transforms raw COVID-19 datasets into clear,
+        meaningful visual insights. It demonstrates the complete data-analysis
+        workflow — loading, cleaning, feature engineering, exploratory analysis
+        and professional visualisation — using the Python data-science stack.
+      </p>
+
+      <h2>What this project does</h2>
+      <ul>
+        <li>Cleans and merges cases, deaths and vaccination records</li>
+        <li>Computes derived metrics (new cases, rolling averages, case-fatality rate)</li>
+        <li>Ranks countries and detects peak periods</li>
+        <li>Produces 10 high-quality charts for trends, comparisons and correlations</li>
+        <li>Presents everything in a clean, modern medical-tech UI</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-pill">Python</div>
+        <div class="tech-pill">Pandas</div>
+        <div class="tech-pill">NumPy</div>
+        <div class="tech-pill">Matplotlib</div>
+        <div class="tech-pill">Seaborn</div>
+        <div class="tech-pill">HTML / CSS</div>
+        <div class="tech-pill">Jupyter</div>
+      </div>
+
+      <h2>How to run the analysis</h2>
+      <p>
+        From the project root:
+      </p>
+      <pre style="background:#0F172A;color:#E2E8F0;padding:1rem 1.25rem;border-radius:12px;overflow-x:auto;font-size:0.9rem;margin-bottom:1.25rem;">python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python src/analysis.py</pre>
+      <p>
+        Charts are written to the <code>visualizations/</code> folder.
+        Open <code>web/index.html</code> in a browser to view this UI.
+      </p>
+
+      <h2>Disclaimer</h2>
+      <p>
+        This is an educational demonstration project that uses a small sample
+        dataset. It is not a source of medical advice. Always consult qualified
+        health professionals and official public-health sources for real-world
+        decisions.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>CovidScope</strong> — Educational project for data visualisation &amp; analysis</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
